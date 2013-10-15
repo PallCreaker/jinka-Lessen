@@ -6,8 +6,13 @@ jinka-Lessen
 
 ##macの方
 ターミナルを開いて、自分のファイルを起きたいとこに移動し、そこで、
-
-git clone 〇〇（ここのURL）をたたいて。
+```
+$ cd /XXX/XXX
+```
+んで、
+```
+$ git clone git@github.com:PallCreaker/jinka-Lessen.git
+```
 
 おわり。
 
