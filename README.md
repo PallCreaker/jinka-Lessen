@@ -11,7 +11,7 @@ $ cd /XXX/XXX
 ```
 んで、
 ```
-$ git clone git@github.com:PallCreaker/jinka-Lessen.git
+$ git clone https://github.com/PallCreaker/jinka-Lessen.git
 ```
 
 おわり。
