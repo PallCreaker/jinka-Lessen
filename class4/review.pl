@@ -2,9 +2,11 @@ open (FH, "< ./test.dat") or die;	# データファイルを開く
 
 for ($i=0;$i < 9; $i++ ){
 	$line = <FH>;
-	chomp $line;
-	@data = split (/,/,$line);
-		foreach(@data){
+
+	#
+	stringToArray($line);
+
+	foreach(@data){
         $total += $_;
     }
     $data_count = @data;
@@ -21,3 +23,9 @@ for (my $j = 0; $j < 8; $j++) {
 }
 print "\n";
 close(FH);
+
+sub stringToArray($line) {
+	chomp $line;
+	@data = split (/,/,$line);
+	return @data;
+}
