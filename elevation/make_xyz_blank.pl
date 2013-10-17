@@ -4,23 +4,34 @@
 # 2008-06-05
 
 #ファイルオープン
-open(IN,"<./elevation.csv") or die;
-open(OUT,">./elevation.txt") or die;
+# open(IN,"<./elevation.csv") or die;
+# open(OUT,">./elevation.txt") or die;
+
+open(IN,"<./elevation2.csv") or die;
+open(OUT,">./elevation2.txt") or die;
+
+# open(IN,"<./elevation.csv") or die;
+# open(OUT,">./elevation.txt") or die;
 
 $y = 0;	# 行(ー)
 $x = 0;	# 列(｜)
 
-for($y=0; $y < 10; $y++ ) {
+for($y=0; $y < 100; $y++ ) {
 	$line = <IN>;
-	chomp $line;
-	@y_data = split(/,/, $line);
+	if ($line != '') {
+		chomp $line;
+		@y_data = split(/,/, $line);
 
-	for($x=0; $x < 9; $x++ ) {
-		print OUT $x."\t".$y."\t".$y_data[$x],"\n";
+		$y_count = @y_data;
+		for($x=0; $x < $y_count; $x++ ) {
+			if ($y_data[$x] == "-9") {
+				$y_data[$x] = 0;
+			}
+			print OUT $x."\t".$y."\t".$y_data[$x],"\n";
+			#debug  print $x."\t".$y."\t".$y_data[$x],"\n";
+		}
+		print OUT "\n";
 	}
-
-	print OUT "\n";
-
 }
 
 close(IN);
