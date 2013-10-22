@@ -2,7 +2,6 @@
 
 # 1度グリッドの地球データファイル（ctmp6190_1-grid.csv）を使用して行の平均を出力するスクリプト
 
-
 open (IN, "< ctmp6190_1-grid.csv") or die;
 open (OUT,"> ctmp6190_1-grid.out") or die;
 
@@ -19,18 +18,18 @@ while ($line=<IN>) {
 
        }
     }
-    
+
     if (				) {
     }   # 陸地が一点もない場合は？
     else {
     }
-    
+
     print OUT ;
-    
- 
- 
- 
+
+
+
+
 }
- 
+
 close(IN);
 close(OUT);
